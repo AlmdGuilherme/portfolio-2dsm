@@ -4,8 +4,15 @@ const path = require('path')
 const app = express();
 const port = 3000;
 
+const corsOptions = {
+  origin: 'https://almdguilherme.github.io', // Substitua PELO SEU DOMÍNIO EXATO do GitHub Pages
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Se precisar de cookies ou autenticação
+  optionsSuccessStatus: 204,
+};
 
-app.use(cors())
+app.use(cors(corsOptions));
+app.use(express.json());
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.get('/api/habilidades', (req, res) => {

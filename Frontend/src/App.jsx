@@ -9,7 +9,7 @@ import ProjPage from './pages/ProjetosPage/Projetos.jsx'
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio-2dsm">
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>
         <Route path="/habilidades" element={<SkillsPage/>}></Route>

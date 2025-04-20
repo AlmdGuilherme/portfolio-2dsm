@@ -32,3 +32,13 @@
     gap: 1rem;
   }
 }
+
+.infoFetch{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #fff;
+}

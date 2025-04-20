@@ -13,7 +13,7 @@ export default function CertificadosPage(){
       const [error, setError] = useState(null);
     
       useEffect(() => {
-        fetch('https://vercel.com/guilherme-almeida-camargos-projects/portfolio-2dsm/CDKbCX1daUKnFmAnrpT3DMdVSWRX/api/certificados') // Atualizei a porta para 3001
+        fetch('https://portfolio-2dsm.vercel.app/api/certificados') // Atualizei a porta para 3001
           .then(response => {
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
@@ -50,7 +50,7 @@ export default function CertificadosPage(){
         {certList && certList.map(certificado => (
           <CertificadoCard
             key={certificado.id}
-            img={`http://localhost:3000${certificado.image}`} // Construa a URL completa
+            img={`https://portfolio-2dsm.vercel.app${certificado.image}`} // Construa a URL completa
             area_cert={certificado.area}
             description={certificado.descricao}
             >

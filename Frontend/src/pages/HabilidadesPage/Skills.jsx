@@ -10,7 +10,7 @@ function Skill() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://vercel.com/guilherme-almeida-camargos-projects/portfolio-2dsm/CDKbCX1daUKnFmAnrpT3DMdVSWRX/api/habilidades') // Atualizei a porta para 3001
+    fetch('https://portfolio-2dsm.vercel.app/api/habilidades') // Atualizei a porta para 3001
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -28,10 +28,10 @@ function Skill() {
   }, []);
 
   if (loading) {
-    return <div className={styles.infosFetch}>Carregando conteúdo....</div>;
+    return <div className={styles.infoFetch}>Carregando conteúdo....</div>;
   }
   if (error) {
-    return <div className={styles.infosFetch}>Erro ao carregar dados: {error.message}</div>;
+    return <div className={styles.infoFetch}>Erro ao carregar dados: {error.message}</div>;
   }
 
   return (
