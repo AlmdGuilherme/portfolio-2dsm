@@ -11,7 +11,7 @@ export default function FormAcPage(){
     const [error, setError] = useState(null);
   
     useEffect(() => {
-      fetch('https://portfolio-2dsm.vercel.app/api/formacao-academica') // Atualizei a porta para 3001
+      fetch('api/formacao-academica') // Atualizei a porta para 3001
         .then(response => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

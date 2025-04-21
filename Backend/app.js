@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors')
 const path = require('path')
 const app = express();
-const port = 3000;
 
 const corsOptions = {
   origin: 'https://almdguilherme.github.io', // Substitua PELO SEU DOMÍNIO EXATO do GitHub Pages
@@ -36,7 +35,7 @@ app.get('/api/habilidades', (req, res) => {
     { id: 17, rgba: 'rgba(56, 189, 248, 1)', iconClass: 'devicon-tailwindcss-original',  nome: 'Tailwind' }
 
   ];
-  res.json(habilidades); // Envia um array de objetos como resposta
+  res.json(habilidades); // Envia um array de objetos como 
 });
 
 app.get('/api/formacao-academica', (req, res) => {
@@ -83,6 +82,6 @@ app.get('/api/projetos', (req, res) => {
   res.json(projetos)
 })
 
-app.listen(port, () => {
-  console.log(`Servidor Node.js rodando na porta ${port}`);
+app.listen(() => {
+  console.log('Servidor Node.js rodando');
 });

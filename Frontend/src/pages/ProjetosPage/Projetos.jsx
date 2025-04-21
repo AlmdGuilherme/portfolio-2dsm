@@ -10,7 +10,7 @@ export default function Projetos(){
         const [error, setError] = useState(null);
       
         useEffect(() => {
-          fetch('https://portfolio-2dsm.vercel.app/api/projetos') // Atualizei a porta para 3001
+          fetch('/api/projetos') // Atualizei a porta para 3001
             .then(response => {
               if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -47,7 +47,7 @@ export default function Projetos(){
             <ProjectCard
             key={projeto.id}
             situation = {projeto.situacao}
-            img_path ={`https://portfolio-2dsm.vercel.app${projeto.image}`}
+            img_path ={`${projeto.image}`}
             proj_title={projeto.nome}
             owner={projeto.devTeam}
             proj_description={projeto.descricao}
