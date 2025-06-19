@@ -11,7 +11,7 @@ export default function FormAcPage(){
     const [error, setError] = useState(null);
   
     useEffect(() => {
-      fetch('api/formacao-academica') // Atualizei a porta para 3001
+      fetch(`https://portfolio-backend-omega-woad.vercel.app/api/formacao-academica`)
         .then(response => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -58,34 +58,3 @@ export default function FormAcPage(){
     </>
   )
 }
-
-          {/* <FormacaoCard
-            form_title='Ensino Médio - Técnico em Informática'
-            form_location='Colégio Joseense'
-            form_duration='2020 - 2022'
-            form_description='Introdução a programção (HTML, CSS e JavaScript), noção de hardware e programação de jogos (Unreal).'
-          ></FormacaoCard>
-          <FormacaoCard
-            form_title='Inglês'
-            form_location='Wizard'
-            form_duration='2017 - 2022'
-            form_description='Curso voltado para aprendizagem de lingua estrangeira.'
-          ></FormacaoCard>
-          <FormacaoCard
-            form_title='Desenvolvedor Full Stack'
-            form_location='One Bit Code'
-            form_duration='2022 - Presente'
-            form_description='Cuso voltado para as principais tecnologias utilizadas para desenvolvimento web, do básico ao avançado.'
-          ></FormacaoCard>
-          <FormacaoCard
-            form_title='Desenvolvedor Python'
-            form_location='One Bit Code'
-            form_duration='2023 - Presente'
-            form_description='Curso voltado para a linguagem python, do básico ao avançado (automações, banco de dados e IA)'
-          ></FormacaoCard>
-          <FormacaoCard
-            form_title='Ensino Superior'
-            form_location='Fatec'
-            form_duration='2024 - Presente'
-            form_description='Atualmente, estou cursando Desenvolvimento de Software Multiplataforma na Fatec-SJC'
-          ></FormacaoCard> */}

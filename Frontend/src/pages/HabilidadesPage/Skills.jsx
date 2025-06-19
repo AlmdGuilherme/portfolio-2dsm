@@ -10,7 +10,7 @@ function Skill() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/api/habilidades') // Atualizei a porta para 3001
+    fetch('https://portfolio-backend-omega-woad.vercel.app/api/habilidades')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -26,7 +26,7 @@ function Skill() {
         setLoading(false);
       });
   }, []);
-
+  
   if (loading) {
     return <div className={styles.infoFetch}>Carregando conteúdo....</div>;
   }

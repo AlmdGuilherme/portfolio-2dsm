@@ -10,7 +10,7 @@ export default function Projetos(){
         const [error, setError] = useState(null);
       
         useEffect(() => {
-          fetch('/api/projetos') // Atualizei a porta para 3001
+          fetch('https://portfolio-backend-omega-woad.vercel.app/api/projetos') // Atualizei a porta para 3001
             .then(response => {
               if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -46,12 +46,13 @@ export default function Projetos(){
           {projList && projList.map(projeto => (
             <ProjectCard
             key={projeto.id}
-            situation = {projeto.situacao}
-            img_path ={`${projeto.image}`}
-            proj_title={projeto.nome}
-            owner={projeto.devTeam}
-            proj_description={projeto.descricao}
-            techs={projeto.tecnologias}>
+            situation = {projeto.situation}
+            img_path ={`https://portfolio-backend-omega-woad.vercel.app${projeto.image}`}
+            proj_title={projeto.name}
+            owner={projeto.team}
+            proj_description={projeto.description}
+            proj_link={projeto.link}
+            techs={projeto.technologies}>
           </ProjectCard>
           ))}
         </section>

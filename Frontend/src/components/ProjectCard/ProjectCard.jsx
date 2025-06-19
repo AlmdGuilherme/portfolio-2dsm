@@ -17,17 +17,17 @@ export default function ProjectCard(props){
       {situacaoProj()}
       <section className={styles.proj_infos}>
         <section className={styles.proj_texts}>
-          <h1>{props.proj_title}</h1>
+          <a href={props.proj_link} className={styles.project_link}>{props.proj_title}</a>
           <h2>{props.owner}</h2>
           <h3>{props.proj_description}</h3>
         </section>
         <section className={styles.proj_tecs}>
           {Array.isArray(props.techs) ? (
-            props.techs.map((techClass, index) => (
-              <i key={index} className={`${techClass}`}></i>
+            props.techs.map((tech, index) => (
+              <i key={index} className={`${tech.icon}`}></i> 
             ))
           ) : (
-            <i className={`${props.techs}`}></i> // Caso 'techs' seja uma única string
+            <i className={`${props.techs}`}></i> 
           )}
         </section>
       </section>

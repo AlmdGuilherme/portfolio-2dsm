@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar/Navbar";
 import styles from './styles.module.css'
 import profilePic from '../../assets/profile-pic.jpg'
+import Curriculo from '../../assets/Curriculo.pdf'
 
 export default function HomePage() {
   return (
@@ -17,12 +18,14 @@ export default function HomePage() {
           </section>
           <section className="ss:max-md:flex-col-reverse flex h-30% w-full items-center justify-around gap-4">
             <section className="ss:max-md:w-[70%] flex justify-between items-center w-[30%]">
-              <i className={`${styles.icon} ${styles.Li} devicon-linkedin-plain`}></i>
-              <i className={`${styles.icon}  ${styles.Gh} devicon-github-original`}></i>
-              <ion-icon className={`${styles.icon} ${styles.Em} devicon-email`} name="mail-outline"></ion-icon>
+              <a className={`${styles.links} ${styles.Li}`} href="https://www.linkedin.com/in/guilherme-almeida-profile/"><i className={`${styles.icon} devicon-linkedin-plain`}></i></a>
+              <a className={`${styles.links} ${styles.Gh}`} href="https://github.com/AlmdGuilherme"><i className={`${styles.icon} devicon-github-original`}></i></a>
+              <a className={`${styles.links} ${styles.Em}`} href="mailto:guilhermecamargo_@outlook.com"><ion-icon className={`${styles.icon} devicon-email`} name="mail-outline"></ion-icon></a>
             </section>
-            <button className="pr-6 pl-6 pt-3 pb-3 text-center bg-white font-extrabold text-xl rounded-full shadow-0xl">
-              Download CV <ion-icon name="download"></ion-icon>
+            <button className="pr-6 pl-6 pt-3 pb-3 text-center bg-white rounded-full text-2xl font-extrabold shadow-0xl">
+              <a className={`${styles.links} ${styles.downloadCV}`} href={Curriculo} download='Guilherme_Almeida_CV.pdf'>
+                 Download CV <ion-icon name="download"></ion-icon>
+              </a>
             </button>
           </section>
         </section>

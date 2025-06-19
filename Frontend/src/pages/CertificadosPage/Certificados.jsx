@@ -13,7 +13,7 @@ export default function CertificadosPage(){
       const [error, setError] = useState(null);
     
       useEffect(() => {
-        fetch('/api/certificados') // Atualizei a porta para 3001
+        fetch('https://portfolio-backend-omega-woad.vercel.app/api/certificados') // Atualizei a porta para 3001
           .then(response => {
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
@@ -50,8 +50,8 @@ export default function CertificadosPage(){
         {certList && certList.map(certificado => (
           <CertificadoCard
             key={certificado.id}
-            img={`${certificado.image}`} // Construa a URL completa
-            area_cert={certificado.area}
+            img={`https://portfolio-backend-omega-woad.vercel.app${certificado.image}`} // Construa a URL completa
+            area_cert={certificado.tipo}
             description={certificado.descricao}
             >
             </CertificadoCard>
